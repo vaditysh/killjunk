@@ -35,6 +35,7 @@
 :: basically malicious telemetries that do NOTHING
 ::
 
+
 echo [+] Killing OneDrive.exe...
 taskkill /f /im "OneDrive.exe" >nul 2>&1
 echo [+] Killing YourPhone.exe...
@@ -54,11 +55,13 @@ taskkill /f /im "XboxAppServices.exe" >nul 2>&1
 echo [+] Killing WSearchIndexer.exe...
 taskkill /f /im "WSearchIndexer.exe" >nul 2>&1
 :: disables useless telemetries
+
 echo [+] Disabling DiagTrack telemetry service...
 sc config DiagTrack start= disabled >nul 2>&1
 sc stop DiagTrack >nul 2>&1
 :: xbox stuff terminated
 :: dont use this program with xbox stuff connected
+
 echo [+] Disabling XblAuthManager...
 sc config XblAuthManager start= disabled >nul 2>&1
 sc stop XblAuthManager >nul 2>&1
@@ -69,32 +72,38 @@ echo [+] Disabling XboxNetApiSvc...
 sc config XboxNetApiSvc start= disabled >nul 2>&1
 sc stop XboxNetApiSvc >nul 2>&1
 :: connected devices OFF.
+
 echo [+] Disabling CDPUserSvc (Connected Devices Platform)...
 sc config CDPUserSvc start= disabled >nul 2>&1
 sc stop CDPUserSvc >nul 2>&1
 :: disable windows error feedback
 :: windows doesnt care anyway, nor microsoft does
+
 echo [+] Disabling WerSvc (Windows Error Reporting)...
 sc config WerSvc start= disabled >nul 2>&1
 sc stop WerSvc >nul 2>&1
+
 :: remote registries termination, is never used if not in business or corporation systems
+
 echo [+] Disabling RemoteRegistry...
 sc config RemoteRegistry start= disabled >nul 2>&1
 sc stop RemoteRegistry >nul 2>&1
-:: disable insider service, nobody gets enrolled (foshu not u)
+
+:: disable insider service
+
 echo [+] Disabling wisvc (Windows Insider Service)...
 sc config wisvc start= disabled >nul 2>&1
 sc stop wisvc >nul 2>&1
+
 :: windows update medic services
 :: this is like using wet wipes on internal bleeding
+
 echo [+] Disabling WaaSMedicSvc (Windows Update Medic Service)...
 sc config WaaSMedicSvc start= disabled >nul 2>&1
 sc stop WaaSMedicSvc >nul 2>&1
-:: almost done!!! omggg
-:: cleanmgr time
+
 echo [+] Performing quick storage debloat...
 cleanmgr /sagerun:1
-:: done!!!
 echo [+] Debloat complete. System should remain fully functional.
 pause 
 exit
@@ -105,4 +114,6 @@ exit
 :: check out the readme NOW.
 
 :: check out the readme NOW.
+:: check out the readme NOW.
+
 
