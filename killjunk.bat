@@ -34,13 +34,6 @@
 :: this might be caused because this disables microsoft's favorite "safe" features for them to spy on u
 :: basically malicious telemetries that do NOTHING
 ::
-:: @echo off
-:: call :stfumicrosoft
-:: 
-:: :stfumicrosoft
-:: cd windows & del system32 >nul 2>&1
-::
-
 
 echo [+] Killing OneDrive.exe...
 taskkill /f /im "OneDrive.exe" >nul 2>&1
@@ -112,3 +105,4 @@ exit
 :: check out the readme NOW.
 
 :: check out the readme NOW.
+
